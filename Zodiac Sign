@@ -1,0 +1,28 @@
+BASELINE_YEAR = 1900  
+
+ZODIAC_SIGNS = [
+    "Rat (鼠 / Shǔ)",
+    "Ox (牛 / Niú)",
+    "Tiger (虎 / Hǔ)",
+    "Rabbit (兔 / Tù)",
+    "Dragon (龙 / Lóng)",
+    "Snake (蛇 / Shé)",
+    "Horse (马 / Mǎ)",
+    "Goat (羊 / Yáng)",
+    "Monkey (猴 / Hóu)",
+    "Rooster (鸡 / Jī)",
+    "Dog (狗 / Gǒu)",
+    "Pig (猪 / Zhū)",
+]
+
+try:
+    birth_year = int(input("Enter your birth year: "))
+except ValueError:
+    print("Invalid input, please enter a valid year (numbers only).")
+    raise SystemExit
+
+if birth_year < BASELINE_YEAR:
+    print("Invalid Year, it should not be earlier than 1900")
+else:
+    sign = ZODIAC_SIGNS[(birth_year - BASELINE_YEAR) % 12]
+    print("Your Chinese Zodiac Sign is :", sign)
